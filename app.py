@@ -45,7 +45,6 @@ def handle_message(event):
     user_id = event.source.user_id
     print('user_id = ', user_id)
     msg = event.message.text
-    r = '我看不懂你說什麼'
  
 
     order_list = []
