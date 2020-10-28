@@ -42,7 +42,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     #get user id when reply
-    display_name = event.source.profile(display_name)
+    display_name = event.source.profile.display_name
     #print('user_id = ', user_id)
     msg = event.message.text
  
