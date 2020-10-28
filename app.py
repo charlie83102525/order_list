@@ -48,7 +48,7 @@ def handle_message(event):
     msg = event.message.text
  
 
-    if msg in '+'+'str(%d)':
+    if msg == '+'+'str(%d)':
         r = profile.display_name + '購買' + 'str(%d)' +'份'
         global order_list
         order_list = []
