@@ -49,7 +49,7 @@ def handle_message(event):
  
 
     if msg in '+2':
-        r = profile.display_name + '購買' + 'str(2)' +'份'
+        r = profile.display_name + '購買2份'
         global order_list
         order_list = []
         order_list.append(r)
