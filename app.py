@@ -50,6 +50,7 @@ def handle_message(event):
 
     if msg in '+'+'str(%d)':
         r = profile.display_name + '購買' + 'str(%d)' +'份'
+        global order_list
         order_list = []
         order_list.append(r)
 
