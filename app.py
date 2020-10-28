@@ -50,14 +50,14 @@ def handle_message(event):
 
     if msg == '+str(/d)':
         r = profile.display_name + '購買' + 'str(/d)' +'份'
-        order_list = []
-        order_list.append(r)
+        #order_list = []
+        #order_list.append(r)
 
 
-    for ol in order_list:
+    #for ol in order_list:
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=ol))
+            TextSendMessage(text=r))
 
 
 if __name__ == "__main__":
