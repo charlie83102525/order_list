@@ -48,16 +48,16 @@ def handle_message(event):
     msg = event.message.text
  
 
-    if msg == '+str(/d)':
-        r = profile.display_name + '購買' + 'str(/d)' +'份'
-        #order_list = []
-        #order_list.append(r)
+    if msg in '+'+'str(/d)':
+        r = profile.display_name + '購買' + 'msg[1]' +'份'
+        order_list = []
+        order_list.append(r)
 
 
-    #for ol in order_list:
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=r))
+    for ol in order_list:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=r))
 
 
 if __name__ == "__main__":
