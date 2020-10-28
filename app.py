@@ -19,7 +19,7 @@ app = Flask(__name__)
 line_bot_api = LineBotApi('4gsemJ/i1qNM87TDrM0VcZkIO8/UHCeq/3/mCtXb/EuUUdH7iwQtVY6WKrym9dn2sIoeVmMRZgM9gs2dQ0L5feeQUD/WxO6WXyWO5FKFtLhfQgBWDa0AEz1VFYwQhVzuQutykL29+yFA2Wiapu25ZwdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('0e4857dbcd8e9b8bf9f147b097df1937')
 
-order_list = []
+
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -48,10 +48,12 @@ def handle_message(event):
     msg = event.message.text
  
 
-    
+order_list = []
+
     if msg == '+1':
-        r = profile.display_name + '購買1份'
+        r = profile.display_name + '購買' + 1 +'份'
         order_list.append(r)
+
 
     for ol in order_list:
         line_bot_api.reply_message(
