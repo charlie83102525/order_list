@@ -42,14 +42,14 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     #get user id when reply
-    user_name = event.source.user_name
+    line_id = event.source.line_id
     #print('user_id = ', user_id)
     msg = event.message.text
  
 
     order_list = []
     if msg == '+1':
-        r = user_name + '購買1份'
+        r = line_id + '購買1份'
         order_list.append(r)
 
     for ol in order_list:
