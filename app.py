@@ -55,9 +55,9 @@ def handle_message(event):
 
 
     #for ol in order_list:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=r))
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=r))
 
 
 if __name__ == "__main__":
