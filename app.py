@@ -48,10 +48,9 @@ def handle_message(event):
     msg = event.message.text
  
 
-order_list = []
-
     if msg == '+1':
         r = profile.display_name + '購買' + 1 +'份'
+        order_list = []
         order_list.append(r)
 
 
