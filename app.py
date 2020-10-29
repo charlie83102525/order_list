@@ -54,7 +54,7 @@ def handle_message(event):
         #order_list.append(r)
 
     else:
-        print('請輸入「+數量」')
+        r = '親，請輸入「+數量」'
 
 
     #for ol in order_list:
