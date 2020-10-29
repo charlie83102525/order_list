@@ -45,13 +45,14 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    #get user id when reply
+    a = []
+
     profile = line_bot_api.get_profile(event.source.user_id)
-    #print('user_id = ', user_id)
     msg = event.message.text
  
     if msg[0] == '+':
-        r = profile.display_name + '購買'+ msg[1] + '份'
+        r = profile.display_name + '購買'+ msg[1:] + '份'
+        a.append(r)
 
     else:
         r = '親，請輸入「+數量」'
@@ -68,7 +69,7 @@ def handle_message(event):
     #for ol in order_list:
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=r))
+        TextSendMessage(text=a))
 
 
 
