@@ -12,6 +12,9 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, StickerSendMessage
 )
+import pandas
+
+import sqlite3 as lite
 
 
 app = Flask(__name__)
@@ -49,18 +52,25 @@ def handle_message(event):
  
     if msg[0] == '+':
         r = profile.display_name + '購買'+ msg[1] + '份'
-        #global order_list
-        #order_list = []
-        #order_list.append(r)
 
     else:
         r = '親，請輸入「+數量」'
+
+    global order_list
+        order_list = []
+        order_list.append(r)
+        order_list_df = pandas.DataFrame(order_list)
+        order_list_df.colume = [orderifo]
+        with lite.connect('order_list.sqlite') as db:
+            order_list_df.to_sql('order_list', con = db)
 
 
     #for ol in order_list:
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=r))
+        TextSendMessage(text=order_list))
+
+
 
 
 if __name__ == "__main__":
