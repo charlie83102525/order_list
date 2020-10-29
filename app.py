@@ -60,7 +60,7 @@ def handle_message(event):
     order_list = []
     order_list.append(r)
     order_list_df = pandas.DataFrame(order_list)
-    order_list_df.colume = [orderifo]
+    order_list_df.colume = ['orderifo']
     with lite.connect('order_list.sqlite') as db:
         order_list_df.to_sql('order_list', con = db)
 
