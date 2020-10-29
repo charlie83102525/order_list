@@ -49,18 +49,18 @@ def handle_message(event):
  
     if msg[0] == '+':
         r = profile.display_name + '購買'+ msg[1] + '份'
-        global order_list
-        order_list = []
-        order_list.append(r)
+        #global order_list
+        #order_list = []
+        #order_list.append(r)
 
     else:
         print('請輸入「+數量」')
 
 
-    for ol in order_list:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=ol))
+    #for ol in order_list:
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=r))
 
 
 if __name__ == "__main__":
