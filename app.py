@@ -47,9 +47,8 @@ def handle_message(event):
     #print('user_id = ', user_id)
     msg = event.message.text
  
-
-    if msg in '+2':
-        r = profile.display_name + '購買2份'
+    if msg[0] == '+':
+        r = profile.display_name + '購買'+ msg[1] + '份'
         global order_list
         order_list = []
         order_list.append(r)
