@@ -2,4 +2,4 @@ line-bot-sdk
 gunicorn
 flask
 pandas
-SQLite
+SQLite3
