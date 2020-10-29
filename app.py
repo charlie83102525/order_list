@@ -16,7 +16,7 @@ import pandas
 
 import sqlite3 as lite
 
-a =[]
+o =[]
 app = Flask(__name__)
 
 line_bot_api = LineBotApi('4gsemJ/i1qNM87TDrM0VcZkIO8/UHCeq/3/mCtXb/EuUUdH7iwQtVY6WKrym9dn2sIoeVmMRZgM9gs2dQ0L5feeQUD/WxO6WXyWO5FKFtLhfQgBWDa0AEz1VFYwQhVzuQutykL29+yFA2Wiapu25ZwdB04t89/1O/w1cDnyilFU=')
@@ -52,7 +52,7 @@ def handle_message(event):
  
     if msg[0] == '+':
         r = profile.display_name + '購買'+ msg[1:] + '份'
-        a.append(r)
+        o.append(r)
 
     else:
         r = '親，請輸入「+數量」'
@@ -68,7 +68,7 @@ def handle_message(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=',\n'.join(a)))
+        TextSendMessage(text=',\n'.join(o)))
 
 
 if __name__ == "__main__":
