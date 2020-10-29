@@ -56,20 +56,19 @@ def handle_message(event):
     else:
         r = '親，請輸入「+數量」'
 
-    global order_list
-    order_list = []
-    order_list.append(r)
-    order_list_df = pandas.DataFrame(order_list)
-    order_list_df.colume = ['orderifo']
-    with lite.connect('order_list.sqlite') as db:
-        order_list_df.to_sql('order_list', con = db)
+    #global order_list
+    #order_list = []
+    #order_list.append(r)
+    #order_list_df = pandas.DataFrame(order_list)
+    #order_list_df.colume = ['orderifo']
+    #with lite.connect('order_list.sqlite') as db:
+        #order_list_df.to_sql('order_list', con = db)
 
 
     #for ol in order_list:
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=order_list))
-
+        TextSendMessage(text=r))
 
 
 
