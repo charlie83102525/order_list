@@ -53,6 +53,9 @@ def handle_message(event):
         order_list = []
         order_list.append(r)
 
+    else msg[0] != '+':
+        break
+
 
     for ol in order_list:
         line_bot_api.reply_message(
