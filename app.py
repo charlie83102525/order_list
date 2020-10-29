@@ -65,10 +65,10 @@ def handle_message(event):
     #with lite.connect('order_list.sqlite') as db:
         #order_list_df.to_sql('order_list', con = db)
 
-    for ol in a:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=ol))
+
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=','join(a))
 
 
 
