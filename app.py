@@ -54,7 +54,7 @@ def handle_message(event):
         order_list.append(r)
 
     else:
-        break
+        continue
 
 
     for ol in order_list:
