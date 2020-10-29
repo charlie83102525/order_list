@@ -16,7 +16,7 @@ import pandas
 
 import sqlite3 as lite
 
-
+a =[]
 app = Flask(__name__)
 
 line_bot_api = LineBotApi('4gsemJ/i1qNM87TDrM0VcZkIO8/UHCeq/3/mCtXb/EuUUdH7iwQtVY6WKrym9dn2sIoeVmMRZgM9gs2dQ0L5feeQUD/WxO6WXyWO5FKFtLhfQgBWDa0AEz1VFYwQhVzuQutykL29+yFA2Wiapu25ZwdB04t89/1O/w1cDnyilFU=')
@@ -45,7 +45,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    a = []
+
 
     profile = line_bot_api.get_profile(event.source.user_id)
     msg = event.message.text
@@ -68,7 +68,7 @@ def handle_message(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=r)
+        TextSendMessage(text=','.join(a))
 
 
 if __name__ == "__main__":
