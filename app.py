@@ -53,7 +53,7 @@ def handle_message(event):
         order_list = []
         order_list.append(r)
 
-    else msg[0] != '+':
+    elif:
         break
 
 
