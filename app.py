@@ -16,7 +16,7 @@ import pandas
 
 import sqlite3 as lite
 
-o =[]
+oo =[]
 app = Flask(__name__)
 
 line_bot_api = LineBotApi('4gsemJ/i1qNM87TDrM0VcZkIO8/UHCeq/3/mCtXb/EuUUdH7iwQtVY6WKrym9dn2sIoeVmMRZgM9gs2dQ0L5feeQUD/WxO6WXyWO5FKFtLhfQgBWDa0AEz1VFYwQhVzuQutykL29+yFA2Wiapu25ZwdB04t89/1O/w1cDnyilFU=')
@@ -52,23 +52,15 @@ def handle_message(event):
  
     if msg[0] == '+':
         r = profile.display_name + '購買'+ msg[1:] + '份'
-        o.append(r)
+        oo.append(r)
 
     else:
         r = '親，請輸入「+數量」'
 
-    #global order_list
-    #order_list = []
-    #order_list.append(r)
-    #order_list_df = pandas.DataFrame(order_list)
-    #order_list_df.colume = ['orderifo']
-    #with lite.connect('order_list.sqlite') as db:
-        #order_list_df.to_sql('order_list', con = db)
-
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=',\n'.join(o)))
+        TextSendMessage(text=',\n'.join(oo)))
 
 
 if __name__ == "__main__":
